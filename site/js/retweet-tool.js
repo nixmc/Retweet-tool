@@ -50,6 +50,7 @@ $(document).ready(function(){
     $("#tweets").html("");
     $("ul#errors").remove();
     $("#download").remove();
+    $("#tweet-table").remove();
     $("p.dates").hide();
     $("p.total").hide();
     
