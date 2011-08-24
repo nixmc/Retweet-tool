@@ -5,8 +5,16 @@ CSV of the information.
 
 You can check the tool out at [http://retweets.nixonmcinnes.co.uk](http://retweets.nixonmcinnes.co.uk)
 
-It has been built with Remy Sharps excellent [Twitter Lib](https://github.com/remy/twitterlib) and so runs completely
+It has been built with the following libs and things:
+* Remy Sharp's excellent [Twitter Lib](https://github.com/remy/twitterlib) and so runs completely
 client side, without the need for authentication or anything.
+* dcneiner's [Downloadify](https://github.com/dcneiner/Downloadify), client side file creation tool in order that we can just host this on S3
+* Jacques-Yves Bleau's [htmlencode library](http://www.strictly-software.com/htmlencode)
+* (JQuery)[http://jquery.com/]
+* (JQueryUI)[http://jqueryui.com/]
+* fgnass' excellent (Spin.js)[http://fgnass.github.com/spin.js/]
+* The CSV Icon from the (RRZE Icon Set)[http://rrze-icon-set.berlios.de/index.html]
+* The (Arvo Google Webfont)[http://www.google.com/webfonts/specimen/Arvo]
 
 ---
 
