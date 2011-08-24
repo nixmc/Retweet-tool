@@ -1,0 +1,34 @@
+body { background-color: #FFF; font-family: Helvetica, Arial, sans-serif; font-size: 1.0em; padding: 0px; margin: 0px; }
+h1 { font-family: 'Arvo', arial, serif; font-size: 3.0em; padding: 0px; margin: 20px; }
+h2 { font-family: 'Arvo', arial, serif; font-size: 6.0em; padding: 0px; margin: 20px; }
+span.nixon { color: #D7E035; }
+span.mcinnes { color: #44A2BB; }
+a {text-decoration: none; color: #44A2BB; }
+#content { margin: 20px; }
+ul { list-style: none; margin: 0; padding: 0; }
+/*#tweets { list-style: none; margin: 0; padding: 0; }*/
+#tweets li { list-style: none; padding: 10px; }
+
+p.tweet-meta { font-size: 0.8em; }
+p.total { font-size: 1.7em; display: none; margin: 10px 0; }
+p.total span { font-weight: bold; }
+p.dates { font-size: 1.0em; display: none; margin: 10px 0; }
+p.dates span { font-weight: bold; }
+
+/*.alternate-li { background-color: #b9fff6;}*/
+
+#footer { margin: 10px; font-size: 0.8em; float: right; }
+#footer p span { font-family: 'Arvo', arial, serif; font-weight: bold; }
+
+#ui-datepicker-div { font-size: 0.7em; }
+
+.small-text { font-size: 0.8em; }
+.error { color: #DD0000;}
+
+ul#errors { font-size: 0.8em; color: #DD0000; margin: 10px 0;}
+
+#spinner { margin: 0px; padding: 10px; float: left; display: inline; }
+
+#tweet-table td { padding: 0.5em; }
+#tweet-table tr:nth-child(even) { background: #b9fff6; }
+
