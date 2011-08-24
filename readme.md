@@ -1,10 +1,14 @@
 # NixonMcInnes Retweet Tool
 
-This tool counts the retweets of a given Twitter user between two given dates.
+This tool counts the retweets of a given Twitter user between two given dates and allows the user to then download a
+CSV of the information.
+
+You can check the tool out at [http://retweets.nixonmcinnes.co.uk](http://retweets.nixonmcinnes.co.uk)
 
 It has been built with Remy Sharps excellent [Twitter Lib](https://github.com/remy/twitterlib) and so runs completely
 client side, without the need for authentication or anything.
 
+---
 
 Copyright (C) 2011 by NixonMcInnes
 
