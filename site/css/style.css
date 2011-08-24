@@ -31,4 +31,5 @@ ul#errors { font-size: 0.8em; color: #DD0000; margin: 10px 0;}
 
 #tweet-table td { padding: 0.5em; }
 #tweet-table tr:nth-child(even) { background: #b9fff6; }
+.hide { display: none; }
 

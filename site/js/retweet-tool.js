@@ -154,6 +154,7 @@ $(document).ready(function(){
       <th>Date</th> \
       <th>Tweet</th> \
       <th>Retweets</th> \
+      <th class='hide'>Link</th> \
       </tr> \
       </table>");
       $table = $("table");
@@ -165,7 +166,8 @@ $(document).ready(function(){
   }
   
   var add_table_row = function(date, tweet, retweets, user, id){
-    var row = "<tr> <td><a href='http://www.twitter.com/" + user + "/status/" + id + "'>" + date + "</a></td> <td>" + tweet + "</td> <td>" + retweets + "</td> </tr>";
+    var link = "http://www.twitter.com/" + user + "/status/" + id;
+    var row = "<tr> <td><a href='" + link + "'>" + date + "</a></td> <td>" + tweet + "</td> <td>" + retweets + "</td> <td class='hide'>" + link + "</td> </tr>";
     $("table").append(row);
   }
   
