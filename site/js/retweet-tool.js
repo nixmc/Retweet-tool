@@ -217,7 +217,6 @@ $(document).ready(function(){
     var from = $("#from-date").attr("value").replace("\/", "-", "g");
     var to = $("#to-date").attr("value").replace("\/", "-", "g");
     var name = "retweets_for_" + user + "_" + from + "_-_" + to + ".csv"; // +;
-    console.log(name);
     return name;
   }
   var generate_data = function(){
@@ -228,13 +227,11 @@ $(document).ready(function(){
         cell = cell.replace('\'', "\'", 'g');
         cell = cell.replace(/(<([^>]+)>)/ig,"");
         cell = Encoder.htmlDecode(cell);
-        //console.log(cell);
         data = data + '"' + cell + '",';
       });
       data = data + "\n\r";
     });
     
-    //console.log(data);
     return data;
   }
 
