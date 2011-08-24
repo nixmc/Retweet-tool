@@ -17,7 +17,7 @@ p.dates span { font-weight: bold; }
 
 /*.alternate-li { background-color: #b9fff6;}*/
 
-#footer { margin: 10px; font-size: 0.8em; float: right; }
+#footer { margin: 10px; font-size: 0.8em; float: right; text-align: right; }
 #footer p span { font-family: 'Arvo', arial, serif; font-weight: bold; }
 
 #ui-datepicker-div { font-size: 0.7em; }

@@ -7,6 +7,20 @@ $(document).ready(function(){
 	$('#to-date').datepicker({
 		dateFormat: 'dd/mm/yy'
 	});
+	
+	var zero_pad = function(num,count)
+  {
+    var numZeropad = num + '';
+    while(numZeropad.length < count) {
+      numZeropad = "0" + numZeropad;
+    }
+    return numZeropad;
+  }
+	var today = new Date();
+	var day = zero_pad(today.getDate(), 2);
+	var month = zero_pad(today.getMonth() + 1, 2);
+	var year = today.getFullYear();
+	$("#to-date").attr('value',  day + "/" + month + "/" + year);
   
   var spinner_options = {
     lines: 7, // The number of lines to draw
@@ -185,8 +199,7 @@ $(document).ready(function(){
   
   $.fn.spin = function(opts) {
     this.each(function() {
-      var $this = $(this),
-          spinner = $this.data('spinner');
+      var $this = $(this), spinner = $this.data('spinner');
 
       if (spinner) spinner.stop();
       if (opts !== false) {
@@ -224,4 +237,5 @@ $(document).ready(function(){
     //console.log(data);
     return data;
   }
+
 });
