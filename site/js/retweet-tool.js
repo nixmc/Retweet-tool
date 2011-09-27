@@ -92,6 +92,7 @@ $(document).ready(function(){
     
     render_table();
     
+    var total_tweets = 0;
     twitterlib.timeline(user, { limit: 200 }, function (tweets, options) {
       for(var x = 0; x < tweets.length; x = x+1){
         var retweets = tweets[x].retweet_count;
@@ -115,9 +116,10 @@ $(document).ready(function(){
       $("#start_date").html(start_date);
       $("#end_date").html(end_date);
       $("p.dates").show();
-      
+      total_tweets = total_tweets + tweets.length;
+      //console.log(total_tweets);
       count++;
-      if (date > from_date) {
+      if (date > from_date && total_tweets < 3200) {
         this.next();
       }
       else{
