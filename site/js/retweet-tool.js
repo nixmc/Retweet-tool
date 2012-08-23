@@ -124,19 +124,19 @@ $(document).ready(function(){
       }
       else{
         $("#spinner").remove();
-        render_download_button();
-        downloadify_options = {
-          swf: 'media/downloadify.swf',
-          downloadImage: 'media/download_csv.png',
-          width: 100,
-          height: 32,
-          filename: generate_filename(),
-          data: generate_data(),
-          dataType: 'string',
-          transparent: true,
-          append: false    
-        };
-        $("#download").downloadify( downloadify_options );
+        render_download_button(generate_filename(), generate_data());
+        // downloadify_options = {
+        //   swf: 'media/downloadify.swf',
+        //   downloadImage: 'media/download_csv.png',
+        //   width: 100,
+        //   height: 32,
+        //   filename: generate_filename(),
+        //   data: generate_data(),
+        //   dataType: 'string',
+        //   transparent: true,
+        //   append: false    
+        // };
+        // $("#download").downloadify( downloadify_options );
       }
     }); // end twitterlib
 
@@ -174,14 +174,13 @@ $(document).ready(function(){
     $("table").append(row);
   }
   
-  var render_download_button = function(){
+  var render_download_button = function(filename, data){
     var $dl = $("#download");
+    
     if($dl.length <= 0){
-      $("p.dates.meta").after("<div id='download'></div>");
+      $("p.dates.meta").after('<div id="download"><a href="">Download CSV</a></div>');
     }
-    else{
-      $("#download").html("");
-    }
+    $('#download a').attr('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(data));
     return $("#download");
   }
   
@@ -219,8 +218,8 @@ $(document).ready(function(){
   var generate_filename = function(){
     var dates = $("p.dates.meta span");
     var user = $("#user").attr("value");
-    var from = $("#from-date").attr("value").replace("\/", "-", "g");
-    var to = $("#to-date").attr("value").replace("\/", "-", "g");
+    var from = $("#from-date").attr("value").replace(/\//g, '-');
+    var to = $("#to-date").attr("value").replace(/\//g, '-');
     var name = "retweets_for_" + user + "_" + from + "_-_" + to + ".csv"; // +;
     return name;
   }
@@ -234,10 +233,25 @@ $(document).ready(function(){
         cell = Encoder.htmlDecode(cell);
         data = data + '"' + cell + '",';
       });
-      data = data + "\n\r";
+      data = data + "\n";
     });
-    
+    console.log(data);
     return data;
   }
 
 });
+
+
+/* dependency: jquery */
+var downloadDataURI = function(options) {
+  if(!options) {
+    return;
+  }
+  $.isPlainObject(options) || (options = {data: options});
+  if(!$.browser.webkit) {
+    location.href = options.data;
+  }
+  options.filename || (options.filename = "download." + options.data.split(",")[0].split(";")[0].substring(5).split("/")[1]);
+  options.url || (options.url = "http://download-data-uri.appspot.com/");
+  $('<form method="post" action="'+options.url+'" style="display:none"><input type="hidden" name="filename" value="'+options.filename+'"/><input type="hidden" name="data" value="'+options.data+'"/></form>').submit().remove();
+}

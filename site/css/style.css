@@ -33,3 +33,8 @@ ul#errors { font-size: 0.8em; color: #DD0000; margin: 10px 0;}
 #tweet-table tr:nth-child(even) { background: #b9fff6; }
 .hide { display: none; }
 
+#download {
+  padding-left: 25px;
+  background: url("/media/download_csv_icon.png") no-repeat;
+}
+
